@@ -21,8 +21,8 @@ export default defineConfig({
     },
   },
   server: {
-    host: isProd ? true : "localhost", // Allow access from any host in production
-    port: isProd ? 80 : 5173, // Use port 80 in production
+    host: true, // Allow access from any host in production
+    port: 80, // Use port 80 in production
     proxy: {
       "/api": {
         target: url,
