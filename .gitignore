@@ -1,0 +1,6 @@
+node_modules
+
+backend/src/projects
+backend/bundle-*
+
+.env
