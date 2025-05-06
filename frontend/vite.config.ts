@@ -2,11 +2,14 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 const isProd = process.env.NODE_ENV !== "development";
-const port = process.env.PORT || 3000;
-const url = isProd ? `http://172.31.7.229:${port}` : `http://localhost:${port}`;
+const port = process.env.PORT || 4000;
+const url = isProd
+  ? `https://172.31.7.229:${port}`
+  : `http://localhost:${port}`;
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/",
   plugins: [react()],
   optimizeDeps: {
     exclude: ["lucide-react", "fsevents"],
@@ -21,9 +24,10 @@ export default defineConfig({
     },
   },
   server: {
-    host: true, // Allow access from any host in production
-    port: 80, // Use port 80 in production
+    // host: true, // Allow access from any host in production
+    // port: 80, // Use port 80 in production
     proxy: {
+      "/preview": url,
       "/api": {
         target: url,
         changeOrigin: true,

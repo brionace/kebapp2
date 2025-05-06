@@ -64,10 +64,9 @@ export function PreviewAndBuild() {
   const templateType = location.state?.templateType;
   const template = TEMPLATES.find((t) => t.category === templateType);
   const url =
-    process.env.NODE_ENV === "production"
-      ? "http://ec2-18-226-200-141.us-east-2.compute.amazonaws.com" // Vercel URL for production
-      : "http://localhost:3000";
-  // const url = "https://twx7oosbtf.execute-api.us-east-2.amazonaws.com/default";
+    process.env.NODE_ENV !== "development"
+      ? "http://213.165.91.27:4000"
+      : "http://localhost:4000";
 
   useEffect(() => {
     const fetchBuildResult = async () => {
@@ -116,7 +115,7 @@ export function PreviewAndBuild() {
 
     try {
       // Trigger the build process on the server
-      const response = await fetch(`${url}/api/build`, {
+      const response = await fetch(`/api/build`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -367,9 +366,10 @@ module.exports = {
           <>
             <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg mb-6">
               <iframe
-                src={`${url}/api/preview/${projectId}`}
+                key={`${projectId}-${buildComplete}`}
+                src={`${url}/preview/${projectId}`}
+                title={`Preview ${projectId}`}
                 className="w-full h-full rounded-lg"
-                title="Preview"
               />
             </div>
 

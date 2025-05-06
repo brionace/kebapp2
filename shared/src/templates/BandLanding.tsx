@@ -78,7 +78,6 @@ interface BandLandingProps {
 }
 
 export function BandLanding({ config, onConfigChange }: BandLandingProps) {
-  console.log(config);
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
