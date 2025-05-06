@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@kebapp/shared": "workspace:*",
-    "vite": "^6.3.1"
+    "@kebapp/shared": "workspace:*"
   }
 }

@@ -366,8 +366,7 @@ module.exports = {
           <>
             <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg mb-6">
               <iframe
-                key={`${projectId}-${buildComplete}`}
-                src={`${url}/preview/${projectId}`}
+                src={`${url}/preview/${projectId}?ready=${buildComplete}`}
                 title={`Preview ${projectId}`}
                 className="w-full h-full rounded-lg"
               />

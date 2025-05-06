@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 const isProd = process.env.NODE_ENV !== "development";
 const port = process.env.PORT || 4000;
@@ -10,7 +11,7 @@ const url = isProd
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/",
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   optimizeDeps: {
     exclude: ["lucide-react", "fsevents"],
   },
