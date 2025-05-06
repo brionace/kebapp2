@@ -1,0 +1,10 @@
+@import 'tailwindcss' layer(utilities);
+@import 'tailwindcss/preflight' layer(utilities);
+/* @import "tailwindcss/typography";
+@import "tailwindcss/forms";
+@import "tailwindcss/line-clamp";
+@import "tailwindcss/aspect-ratio"; */
+
+/* @tailwind base;
+@tailwind components; */
+@import 'tailwindcss/utilities' layer(utilities);

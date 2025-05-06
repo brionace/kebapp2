@@ -229,7 +229,7 @@ export function BandLanding({ config, onConfigChange }) {
                     ...config.musicVideos,
                     videos: newVideos,
                 });
-            }} className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent text-lg font-bold"/>
+            }} className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black to-transparent text-lg font-bold"/>
                   </div>
                 </div>
               </div>))}
