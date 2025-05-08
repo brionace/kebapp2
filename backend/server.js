@@ -22,12 +22,6 @@ app.use(cors());
 
 app.use(express.json()); // To parse JSON request bodies
 
-// Serve the built files
-// app.use(
-//   "/api/preview",
-//   express.static(path.resolve(__dirname, "projects"))
-// );
-
 app.use("/preview/:projectId", (req, res, next) => {
   const projectId = req.params.projectId; // Extract projectId from the URL
   const userBuildDir = path.resolve(

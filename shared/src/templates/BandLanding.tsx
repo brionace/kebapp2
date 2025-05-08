@@ -1,5 +1,5 @@
 import { EditableContent } from "../components/EditableContent";
-import { ClassicNav } from "./nav/ClassicNav";
+import { Nav } from "./nav/Nav";
 import * as Popover from "@radix-ui/react-popover";
 import { Settings } from "lucide-react";
 import { StyleEditor } from "../components/StyleEditor";
@@ -103,7 +103,7 @@ export function BandLanding({ config, onConfigChange }: BandLandingProps) {
               <h1 className="text-2xl font-bold tracking-wider">
                 {config.bandName}
               </h1>
-              <ClassicNav config={config} onConfigChange={onConfigChange} />
+              <Nav config={config} onConfigChange={onConfigChange} />
             </div>
           </div>
 
